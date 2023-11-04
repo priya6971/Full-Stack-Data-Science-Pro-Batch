@@ -1,0 +1,63 @@
+1. Factorial of a given number
+// time complexity: O(n)
+// space complexity: O(n)
+## Factorial of a given number
+## Method definition via the recursion
+def factorial(n):
+    ## 1. Base case condition
+    if n <= 1:
+        return 1
+    
+    ## 2. Recursive function call
+    return n * factorial(n-1)
+
+## Driver code
+n = 50
+result = factorial(n)
+print(result)
+
+2. Fibonnaci Series
+// time complexity: O(2^n)
+// space complexity: O(n)
+
+class Solution:
+    def fib(self, n: int) -> int:
+        ## base case condition
+        if n <= 1:
+            return n
+        
+        ## recursive function call
+        return self.fib(n-1) + self.fib(n-2)
+
+
+3. Climbing Stairs
+// time complexity: O(2^n)
+// space complexity: O(n)
+
+TLE - Time Limit Exceeded because test cases taking bigger values of n
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n <= 3:
+            return n
+        
+        return self.climbStairs(n-1) + self.climbStairs(n-2)
+
+
+Optimized Approach - Iterative Approach
+// time complexity: O(n)
+// space complexity: O(1)
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        ## base case condition
+        if n == 1:
+            return 1
+        ## bigger value of n
+        first = 1
+        second = 2
+        for i in range(3,n+1):
+            third = first + second
+            first = second
+            second = third
+        return second
+
+
